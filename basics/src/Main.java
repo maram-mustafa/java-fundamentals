@@ -1,7 +1,12 @@
+import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String greeting = "Welcome to my Java program.";
         System.out.println(greeting);
 
@@ -17,6 +22,7 @@ public class Main {
 
         flipNHeads(5);
         clock();
+
 
     }
 
@@ -55,22 +61,22 @@ public class Main {
         }
     }
 
+//    public static void clock() throws InterruptedException {
+//        while (true) {
+//            long millis = System.currentTimeMillis();
+//            Thread.sleep(millis - millis % 1000);
+//            System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+//        }
+//    }
+
     public static void clock() {
-        LocalDateTime now = LocalDateTime.now();
-        int hour = now.getHour();
-        int minute = now.getMinute();
-        int second = now.getSecond();
-         // or, if you're feeling fancy
-        String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-
-        System.out.println(time);
-        System.out.println(time);
-
-
+        Timer clockTime = new Timer();
+        clockTime.schedule(new TimerTask() {
+            public void run() {
+                System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+            }
+        }, 1000, 1000);
     }
+
 }
-
-
-
-
 

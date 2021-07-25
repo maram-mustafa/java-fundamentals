@@ -64,6 +64,8 @@ public class Main {
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
         System.out.println(time);
+        System.out.println(time);
+
 
     }
 }

@@ -117,9 +117,8 @@ public class Library {
 
         int minTempr = Collections.min(weatherSet);
         int maxTempr=Collections.max(weatherSet);
-        String notSaw="";
 
-                for (int i = minTempr ; i <maxTempr ; i++){
+                for (int i = minTempr ; i < maxTempr ; i++){
                     if(!weatherSet.contains(i)){
                        return ("Never saw temperature:" + i);
                     }

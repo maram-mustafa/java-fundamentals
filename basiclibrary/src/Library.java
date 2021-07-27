@@ -11,7 +11,6 @@ public class Library {
         String greeting = "Welcome to my Java program.";
         System.out.println(greeting);
 
-
         // task one
         roll(5);
 
@@ -19,10 +18,11 @@ public class Library {
         int[] arr = {2, 5, 8, 5, 4, 5, 9, 8, 1};
         System.out.println("Duplicates : " + containsDuplicates(arr));
 
+        //task three
         int[] array = {2, 3, 4, 5, 6, 7, 8, 9};
         System.out.println("Avg = " + calculatingAverages(array));
 
-
+         //task four
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
                 {57, 65, 65, 70, 72, 65, 51},

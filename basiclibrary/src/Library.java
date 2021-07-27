@@ -19,10 +19,11 @@ public class Library {
         int[] arr = {2, 5, 8, 5, 4, 5, 9, 8, 1};
         System.out.println("Duplicates : " + containsDuplicates(arr));
 
+        //task three
         int[] array = {2, 3, 4, 5, 6, 7, 8, 9};
         System.out.println("Avg = " + calculatingAverages(array));
 
-
+        //task four
         int[][] weeklyMonthTemperatures = {
                 {66, 64, 58, 65, 71, 57, 60},
                 {57, 65, 65, 70, 72, 65, 51},
@@ -30,8 +31,28 @@ public class Library {
                 {65, 56, 55, 52, 55, 62, 57}
         };
         System.out.println(Arrays.toString(arrayOfArrays(weeklyMonthTemperatures)));
+        System.out.println(weatherData(weeklyMonthTemperatures));
 
 
+
+        ////////////////////lab-3
+
+
+
+        //task 2
+        List<String> votes = new ArrayList<>();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+
+        String winner = tally(votes);
+        System.out.println(winner + " received the most votes!");
     }
 
     public static void roll(int n) {
@@ -80,6 +101,51 @@ public class Library {
             }
         }
         return arr[index];
+    }
+
+
+    ///////////// lab-3////
+
+    public static int[] weatherData(int[][] weatherArray){
+        Set<Integer> weatherSet = new HashSet<Integer>();
+
+        for (int[] ints : weatherArray){
+            for(int tempr : ints){
+                weatherSet.add(tempr);
+            }
+        }
+
+        int minTempr = Collections.min(weatherSet);
+        int maxTempr=Collections.max(weatherSet);
+        String notSaw="";
+
+                for (int i = minTempr ; i <maxTempr ; i++){
+                    if(!weatherSet.contains(i)){
+                       return ("Never saw temperature:" + i);
+                    }
+                }
+                return (minTempr + maxTempr );
+    }
+
+    public static String tally(List<String> votes) {
+
+        HashSet<String> votedItems = new HashSet<>();
+        votedItems.addAll(votes);
+
+        int numVotes = 0;
+        String winner = null;
+
+        for (String item : votedItems) {
+            int count = Collections.frequency(votes, item);
+            if (numVotes < count) {
+                numVotes = count;
+                winner = String.format("%s received the most votes!", item);
+            } else if (numVotes == count) {
+                winner = "re-vote is needed";
+            }
+        }
+
+        return winner;
     }
 
 

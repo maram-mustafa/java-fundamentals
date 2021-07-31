@@ -106,24 +106,26 @@ public class Library {
 
     ///////////// lab-3////
 
-    public static int[] weatherData(int[][] weatherArray){
-        Set<Integer> weatherSet = new HashSet<Integer>();
 
-        for (int[] ints : weatherArray){
-            for(int tempr : ints){
+    public static String weatherData(int[][] data) {
+        Set<Integer> weatherSet  = new HashSet<Integer>();
+        for (int i = 0; i < data.length; i++) {
+            for (Integer tempr : data[i]) {
                 weatherSet.add(tempr);
             }
         }
-
         int minTempr = Collections.min(weatherSet);
         int maxTempr=Collections.max(weatherSet);
+        String neversaw = "";
 
-                for (int i = minTempr ; i < maxTempr ; i++){
-                    if(!weatherSet.contains(i)){
-                       return ("Never saw temperature:" + i);
-                    }
-                }
-                return (minTempr + maxTempr );
+        for (int i = minTempr; i < maxTempr; i++) {
+            if (!weatherSet.contains(i)) {
+                neversaw += "Never saw temperature: " + i;
+
+            }
+        }
+        return minTempr + maxTempr + neversaw;
+
     }
 
     public static String tally(List<String> votes) {
@@ -146,9 +148,6 @@ public class Library {
 
         return winner;
     }
-
-
-
 }
 
 

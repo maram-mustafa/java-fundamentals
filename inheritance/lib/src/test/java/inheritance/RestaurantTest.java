@@ -28,16 +28,12 @@ public class RestaurantTest {
 
     @Test
     public void testToString(){
-        Restaurant testRestaurant = new Restaurant("pizza", 1);
-
         Restaurant res1 = new Restaurant("maram",5);
-        Review rev1 = new Review("Ali","good restaurant",5);
 
-        res1.addReview(rev1);
-        // output must be :
-        String out =  "Restaurant{name='maram', stars=0, priceCategory=, reviews=[Review{author='Ali', body='good restaurant', stars=5.0}]}\n";
+        // output:
+        String output = "Restaurant{name='maram', stars=0, priceCategory=, reviews=[Review{author='maram', body='good restaurant', stars=5.0}]}";
 
-        assertEquals(out,res1.toString(),"call addReview, the association is created between the Restaurant and the " +
+        assertEquals(output,res1.toString(),"call addReview, the association is created between the Restaurant and the " +
                 "Review");
 
     }

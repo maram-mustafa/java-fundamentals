@@ -42,7 +42,6 @@ public class Review {
     public String toString() {
         return "Review{" + "author='" + author + '\'' + ", body='" + body + '\'' + ", stars=" + stars + '}';
 
-
     }
 }
 

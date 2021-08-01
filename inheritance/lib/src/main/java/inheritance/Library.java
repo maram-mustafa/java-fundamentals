@@ -11,7 +11,7 @@ public class Library {
         Restaurant res2 = new Restaurant("ahmad",2);
 
         //  Review method
-        Review rev1 = new Review("good restaurant","Ali",5);
+        Review rev1 = new Review("good restaurant","maram",5);
         Review rev2 = new Review("bad restaurant","mustafa",2);
 
         // 3- addReview method

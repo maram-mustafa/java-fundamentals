@@ -9,7 +9,7 @@ public class Restaurant {
     private String name;
     private double numOfStars = 0.0;
     private int priceCategory;
-    public int star;
+    public int stars;
     public LinkedList<Review> reviews = new LinkedList<Review>();
 
     public Restaurant(String name, int priceCategory) {
@@ -41,19 +41,27 @@ public class Restaurant {
         return priceCategory;
     }
 
-    @Override
-    public String toString() {
-        return "Restaurant{" + "name='" + name + '\'' + ", stars=" + star + ", priceCategory=" +  ", " +
-                "reviews=" + reviews + '}';
-    }
+
 
 
     public void addReview(Review review) {
         if(!reviews.contains(review)) { // prevent duplicates
-            star += review.star;
+            stars += review.stars;
             reviews.add(review);
         }
     }
 
-}
 
+
+    @Override
+    public String toString() {
+        String dollar = "";
+        for (int i = 0; i < priceCategory; i++) {
+            dollar += "$";
+        }
+
+        return "Restaurant{" + "name='" + name + '\'' + ", stars=" + stars + ", priceCategory=" + dollar + ", " +
+                "reviews=" + reviews + '}';
+    }
+
+}

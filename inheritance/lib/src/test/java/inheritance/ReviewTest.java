@@ -30,12 +30,12 @@ public class ReviewTest {
         assertEquals("test returnPriceCategory should return:",4.0 , review.getStars());
     }
 
-//    @Test
-//    public void testToString(){
-//        Review review = new Review("This restaurant was good", "Joe Schmoe", 4);
-//
-//        String outPut =""
-//        assertEquals(, ,review.toString());
-//    }
+    @Test
+    public void testToString(){
+        Review review = new Review("good restaurant", "maram", 5);
+
+        String outPut ="Review{author='maram', body='good restaurant', stars=5.0}";
+        assertEquals(outPut,review.toString(),"Review{author='maram', body='good restaurant', stars=5.0}");
+    }
 
 }

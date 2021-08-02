@@ -2,10 +2,9 @@ package inheritance;
 
 public class Review {
 
-    public int star;
     private String body;
     private String author;
-    private double stars;
+    public double stars;
 
 
     public Review(String body, String author, double stars) {

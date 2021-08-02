@@ -31,10 +31,8 @@ public class RestaurantTest {
         Restaurant res1 = new Restaurant("maram",5);
 
         // output:
-        String output = "Restaurant{name='maram', stars=0, priceCategory=, reviews=[Review{author='maram', body='good restaurant', stars=5.0}]}";
-
-        assertEquals(output,res1.toString(),"call addReview, the association is created between the Restaurant and the " +
-                "Review");
+        String output = "Restaurant{name='maram', stars=5, priceCategory=$$$$$, reviews=[Review{author='maram', body='good restaurant', stars=5.0}]}\n";
+        assertEquals(output,res1.toString(),"Restaurant{name='maram', stars=0, priceCategory=$$$$$, reviews=[]}");
 
     }
 

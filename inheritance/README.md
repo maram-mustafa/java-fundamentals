@@ -1,45 +1,92 @@
-### lab -06
+## lab -06
 
-- create class Restaurant, have this fields 
-    - private String name;
-    - private double numOfStars = 0.0;
-    - private int priceCategory;
-* add constructor for this class
-* add setter and getter and add toString method
- 
+* Variables:
+- String name
+- double stars
+- String priceCategory
+- ArrayList<Review> reviews;
+
+* Methods:
+- getName()
+returns the name of the restaurant
+
+- getNumOfStars()
+returns the double value of the stars
+
+- getPriceCategory()
+returns the price category of the restaurant
+
+- addReview(Review review)
+adds a new review to the reviews ArrayList
+
+- toString()
+Returns a formated string for the restaurant
+
+#### Review
+* Variables:
+- String body
+- String author
+- double stars
+
+* Methods:
+- getBody()
+returns the body of the review
+
+- getAuthor()
+returns the author
+
+- getStars()
+returns the stars
+
+- toString()
+returns the review as an organized string
 
 
-- create class Review 
-
-  -  public int star;
-  -  private String body;
-  -  private String author;
-  -  private double stars;
 
 
-* add setter and getter and add toString method
-- public void setBody(String body) {
-        this.body = body;
-    }
+## lab-07
 
-- public void setAuthor(String author) {
-        this.author = author;
-    }
+##### add for the previous lab
 
- -   public void setStars(double stars) {
-        this.stars = stars;
-    }
+##### shop
 
-  -  public String getBody() {
-        return body;
-    }
+* Variables:
+- String name
+- double stars
+- String description
+- int dollarSigns
+- ArrayList<Review> reviews;
 
- -   public String getAuthor() {
-        return author;
-    }
+* Methods:
+- getName()
+returns the name of the restaurant
 
- -   public double getStars() {
-        return stars;
-    }
+- getDescription()
+returns the string value of the sdescription
+
+- getDollarSigns()
+returns the int int number of dollarsign 
+
+- addReview(Review review)
+adds a new review to the reviews ArrayList
+
+- toString()
+Returns a formated string for the restaurant
+
+#### Theater
+* Variables:
+- String name
+- double star
+- ArrayList<Review> reviews = new ArrayList<>();
+- public List<String> movies= new ArrayList<>();
 
 
+* Methods:
+- getName()
+returns name for the theater
+
+- addReview(Review review)
+adds a new review to the reviews ArrayList
+
+- toString()
+Returns a formated string for the restaurant

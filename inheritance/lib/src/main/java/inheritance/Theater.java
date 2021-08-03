@@ -3,7 +3,7 @@ package inheritance;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Theater extends Points {
+public class Theater {
 
     ///// fields for theater
 

@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 
 
 public class RestaurantTest {
+    double delta=0.000;
 
     @Test
     public void testReturnName() {
@@ -14,9 +15,9 @@ public class RestaurantTest {
 
     @Test
     public void testReturnNumOfStars(){
-        Restaurant testRestaurant = new Restaurant("pizza", 1);
+        Restaurant testRestaurant = new Restaurant("pizza", 4);
 
-        assertEquals("test returnStars should return:", 0.0 , testRestaurant.getNumOfStars());
+        assertEquals("test returnName should return:" ,0 , testRestaurant.getNumOfStars(),delta);
     }
 
     @Test
@@ -32,7 +33,7 @@ public class RestaurantTest {
 
         // output:
         String output = "Restaurant{name='maram', stars=5, priceCategory=$$$$$, reviews=[Review{author='maram', body='good restaurant', stars=5.0}]}\n";
-        assertEquals(output,res1.toString(),"Restaurant{name='maram', stars=0, priceCategory=$$$$$, reviews=[]}");
+        assertEquals(output,res1.toString(),"Restaurant{name='maram', stars=0.0, priceCategory=$$$$$, reviews=[]}");
 
     }
 

@@ -1,22 +1,29 @@
 package inheritance;
 
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Restaurant {
+public class Restaurant extends Points {
 
-    //fields for restaurant
+    ///// fields for restaurant
+
     private String name;
+    public int stars;
     private double numOfStars = 0.0;
     private int priceCategory;
-    public int stars;
-    public LinkedList<Review> reviews = new LinkedList<Review>();
+
+    private ArrayList<Review> reviews;
+
+    ////// constructor
 
     public Restaurant(String name, int priceCategory) {
         this.name = name;
         this.priceCategory = priceCategory;
+        this.reviews = new ArrayList<Review>();
     }
 
+    ///// setter and getter
     public void setName(String name) {
         this.name = name;
     }
@@ -42,16 +49,16 @@ public class Restaurant {
     }
 
 
-
-
     public void addReview(Review review) {
-        if(!reviews.contains(review)) { // prevent duplicates
-            stars += review.stars;
+        if(!reviews.contains(review)) {
             reviews.add(review);
         }
+        int sum =0;
+        for (Review reviewNum : reviews) {
+            sum += reviewNum.stars;
+        }
+        stars = sum / reviews.size();
     }
-
-
 
     @Override
     public String toString() {
@@ -59,9 +66,6 @@ public class Restaurant {
         for (int i = 0; i < priceCategory; i++) {
             dollar += "$";
         }
-
-        return "Restaurant{" + "name='" + name + '\'' + ", stars=" + stars + ", priceCategory=" + dollar + ", " +
-                "reviews=" + reviews + '}';
+        return "Restaurant{" + "name='" + name + '\'' + ", stars=" + stars + ", priceCategory=" + dollar + ", " + "reviews=" + reviews + '}';
     }
-
 }

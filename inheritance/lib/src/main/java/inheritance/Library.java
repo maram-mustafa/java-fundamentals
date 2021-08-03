@@ -24,6 +24,37 @@ public class Library {
         System.out.println(res1.toString());
         System.out.println(rev1.toString());
 
+
+        Shop shop1 = new Shop("Watch","this shop for watches",2);
+        System.out.println(shop1.toString());
+        Review review1 = new Review("good shop","maram",5);
+
+        shop1.addReview(review1);
+        System.out.println(shop1.toString());
+
+
+        Theater theater1 = new Theater("rainbow theater");
+//        System.out.println(theater1);
+
+        theater1.addMovie("shutter Island");
+        theater1.addMovie("the silence of the lambs");
+        theater1.addMovie("the god father");
+        System.out.println(theater1.toString());
+
+        theater1.removeMovie("the god father");
+        System.out.println(theater1.toString());
+
+
+
+        Review review = new Review("good","maram",5);
+
+        theater1.addReview(review);
+        System.out.println(review);
+        System.out.println(theater1.toString());
+
+
+
+
     }
 
 }
